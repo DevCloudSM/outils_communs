@@ -1,0 +1,46 @@
+Ceci est la documentation de la librairie de transition python -> sql :
+J'utilise la librairie Psycopg2 pour communiquer avec une database sql
+
+1. Identifiants :
+La variable identifiants est un dictionnaire comprenant les moyens de communiquer avec la database :
+identifiants = {'database':'ipam',      -> nom de la database
+                'user':'postgres',      -> user du serveur
+                'password':'bonjour',   -> mot de passe
+                'host':'localhost',     -> host
+                'port':5432}            -> port (le port par défaut est 5432 mais ça peut changer)
+
+  Si vous avez configuré votre database avec d'autres identifiants, il faudra modifier ce dictionnaire
+
+2. La fonction log
+Cette fonction permet d'écrire des messages dans le fichier log.txt
+Si jamais la fonction n'arrive pas à écrire, elle renvoie False, sinon elle renvoie True
+
+3. La fonction format_sql
+La fonction permet de formatter les données pour qu'elles soient adaptées à la syntaxe SQL :
+string => 'string'
+int => str(int)
+liste(...) => ARRAY[...]
+
+4. La fonction GET
+Cette fonction extrait des données d'une table SQL
+Arguments : nom de la (des) table(s) (liste de string), variable de sélection (en string), valeur de sélection (en string), identifiants = dictionnaire d'identifiants
+Cas d'usage 1 :
+get(['group']) -> renvoie le contenu de la table group
+Cas d'usage 2 :
+get(['group', 'subnet']) -> renvoie le contenu de la table group JOINTE (inner join) avec la table subnet !
+IMPORTANT : la jointure se fait sur la variable group.subnet_id = subnet.id (ie premieretable.deuxiemetable_id = deuxiemetable.id)
+La jointure ne peut se faire que sur deux tables
+Cas d'usage 3 :
+get(['group'], 'name', 'Vannes') -> renvoie le contenu de la table group, avec le filtre name = 'Vannes' (ie variable = 'valeur')
+IMPORTANT : je n'ai prévu pour l'instant qu'un seul filtre possible mais cela peut évoluer si besoin
+
+5. La fonction PUT
+Cette fonction insère des données dans une table SQL
+Arguments : nom de la (des) table(s) (liste de string), données de l'élément à ajouter (dict de string), identifiants = dictionnaire d'identifiants
+Renvoie un booléen indiquant le succès de l'opération
+IMPORTANT Si jamais un élément existe déjà, la fonction renverra le booléen False
+
+6. La fonction DELETE
+Cette fonction supprimme une entrée dans une table SQL
+Arguments : nom de la (des) table(s) (liste de string), clé primaire de l'élément à supprimer (integer), identifiants = dictionnaire d'identifiants
+Renvoie un booléen indiquant le succès de l'opération

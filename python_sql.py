@@ -10,7 +10,7 @@ identifiants = {'database':'ipam',
 def log(message:str) -> bool:
     try:
         with open("log.txt","a",encoding="utf-8") as file:
-            file.write(message)
+            file.write(f'\n{message}')
         return True
     except:
         return False

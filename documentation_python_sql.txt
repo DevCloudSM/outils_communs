@@ -42,5 +42,5 @@ IMPORTANT Si jamais un élément existe déjà, la fonction renverra le booléen
 
 6. La fonction DELETE
 Cette fonction supprimme une entrée dans une table SQL
-Arguments : nom de la (des) table(s) (liste de string), clé primaire de l'élément à supprimer (integer), identifiants = dictionnaire d'identifiants
+Arguments : nom de la table (string), clé primaire de l'élément à supprimer (integer), identifiants = dictionnaire d'identifiants
 Renvoie un booléen indiquant le succès de l'opération

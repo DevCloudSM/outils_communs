@@ -3,7 +3,7 @@ J'utilise la librairie Psycopg2 pour communiquer avec une database sql
 
 
 # 1. get_id(database) -> dictionnaire :
-La fonction get_id renvoie un dictionnaire comprenant les moyens de communiquer avec la database :
+La fonction get_id renvoie un dictionnaire comprenant les moyens de communiquer avec la database : <br>
     {'database':database,    -> nom de la database <br>
     'user':'postgres',      -> user du serveur <br>
     'password':'bonjour',   -> mot de passe <br>

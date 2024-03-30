@@ -2,7 +2,7 @@ Ceci est la documentation de la librairie de transition python -> sql :
 J'utilise la librairie Psycopg2 pour communiquer avec une database sql
 
 
-1. get_id(database) -> dictionnaire :
+# 1. get_id(database) -> dictionnaire :
 La fonction get_id renvoie un dictionnaire comprenant les moyens de communiquer avec la database :
     {'database':database,    -> nom de la database
     'user':'postgres',      -> user du serveur
@@ -15,19 +15,19 @@ La fonction get_id renvoie un dictionnaire comprenant les moyens de communiquer 
 - Si vous avez configuré votre database avec d'autres identifiants, il faudra modifier cette fonction
 
 
-2. log(message) -> bool :
+# 2. log(message) -> bool :
 Cette fonction permet d'écrire des messages dans le fichier log.txt
 Si jamais la fonction n'arrive pas à écrire, elle renvoie False, sinon elle renvoie True
 
 
-3. format_sql(data) -> str :
+# 3. format_sql(data) -> str :
 La fonction permet de formatter les données pour qu'elles soient adaptées à la syntaxe SQL :
 string => 'string'
 int => str(int)
 liste(...) => ARRAY[...]
 
 
-4. GET(database, tables, variable, valeur) -> list[tuple]
+# 4. GET(database, tables, variable, valeur) -> list[tuple]
 Cette fonction extrait des données d'une table SQL
 Arguments : nom de la database (string), nom de la (des) table(s) (liste de string), variable de sélection (en string), valeur de sélection (en string), identifiants = dictionnaire d'identifiants
 
@@ -45,38 +45,38 @@ get('db_1', ['group'], 'name', 'Vannes') -> renvoie le contenu de la table group
 IMPORTANT : je n'ai prévu pour l'instant qu'un seul filtre possible mais cela peut évoluer si besoin
 
 
-5. PUT(database, table, data) -> bool:
+# 5. PUT(database, table, data) -> bool:
 Cette fonction insère des données dans une table SQL
 Arguments : nom de la database (string), nom de la (des) table(s) (liste de string), données de l'élément à ajouter (dict de string), identifiants = dictionnaire d'identifiants
 Renvoie un booléen indiquant le succès de l'opération
 IMPORTANT Si jamais un élément existe déjà, la fonction renverra le booléen False
 
 
-6. DELETE(database, table, id) -> bool:
+# 6. DELETE(database, table, id) -> bool:
 Cette fonction supprime une entrée dans une table SQL
 Arguments : nom de la database (string), nom de la table (string), clé primaire de l'élément à supprimer (integer), identifiants = dictionnaire d'identifiants
 Renvoie un booléen indiquant le succès de l'opération
 
 
-7. create_database(name) -> bool:
+# 7. create_database(name) -> bool:
 Cette fonction crée une database
 Arguments : nom de la database (string)
 Renvoie un booléen indiquant le succès de l'opération
 
 
-8. create_table(database, table_name) -> bool:
+# 8. create_table(database, table_name) -> bool:
 Cette fonction crée une table dans une database
 Arguments : nom de la database (string), nom de la table (string)
 Renvoie un booléen indiquant le succès de l'opération
 
 
-9. add_column(database, table, column_name, type) -> bool:
+# 9. add_column(database, table, column_name, type) -> bool:
 Cette fonction ajoute une column à une table d'une database
 Arguments : nom de la database (string), nom de la table (string), nom de la colomne (string), type de données de la colomne (type)
 Renvoie un booléen indiquant le succès de l'opération
 
 
-10. """user guide"""
+# 10. """user guide"""
 Exemples de fonctions permettant d'illustrer un usage type de la librairie
     create_database('database_1')
     create_table('database_1', 'table_1')

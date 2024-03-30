@@ -35,13 +35,13 @@ Cas d'usage 1 :
 get('db_1', ['group']) -> renvoie le contenu de la table group de la database 'db_1'
 
 Cas d'usage 2 :
-get('db_1', ['group', 'subnet']) -> renvoie le contenu de la table group JOINTE (inner join) avec la table subnet !
+get('db_1', ['group', 'subnet']) -> renvoie le contenu de la table group JOINTE (inner join) avec la table subnet ! <br>
 IMPORTANT : la jointure se fait sur la variable premieretable.deuxiemetable_id = deuxiemetable.id  <br>
 (ex: group.subnet_id = subnet.id) <br>
 La jointure ne peut se faire que sur deux tables
 
 Cas d'usage 3 :
-get('db_1', ['group'], 'name', 'Vannes') -> renvoie le contenu de la table group, avec le filtre name = 'Vannes' (ie variable = 'valeur') <br>
+get('db_1', ['group'], 'name', 'Vannes') -> renvoie le contenu de la table group, avec le filtre WHERE variable = valeur (ex: name = 'Vannes' ) <br>
 IMPORTANT : je n'ai prévu pour l'instant qu'un seul filtre possible mais cela peut évoluer si besoin
 
 

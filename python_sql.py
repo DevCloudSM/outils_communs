@@ -137,17 +137,3 @@ if __name__ == '__main__':
     print(get('database_1',['table_1']))
     print(get('database_1',['table_1'],'column_1',82))
     print(delete('database_1','table_1',6))
-    """
-    print(get(["address"]))
-    print(get(["group"], 'name', 'Vannes'))
-    print(put(table="address", data={'id':6, 'address': "10.4.2.1"}))
-    print(delete("group", 1))
-    print(delete("group", 3))
-    print(put("subnet", {'id':5, 'first@':'10.0.0.2', 'gp_id':1}))
-    print(put("group", {'id':3, 
-                        'name':'Brest', 
-                        'p_id':1, 
-                        'c_ids':[1,4,6], 
-                        'r_r':['dl','sa'], 
-                        'w_r':['sa']}))
-    """

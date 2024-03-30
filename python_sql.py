@@ -76,7 +76,6 @@ def delete(database:str, table:str, id:int) -> bool:
 def create_database(name:str='database_1') -> bool:
     try:
         id = get_id()
-        log(id)
         conn = ps.connect(**id)
         conn.autocommit = True
         cursor = conn.cursor()

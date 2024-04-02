@@ -95,7 +95,7 @@ Exemples de fonctions permettant d'illustrer un usage type de la librairie
 ```
 
 ## 11. Application à l'API:
-Pour faire un post, utiliser la fonction ps.put()
-Pour faire un delete, utiliser la fonction ps.delete()
-Pour faire un get, utiliser la fonction ps.get()
-Pour faire un patch, utiliser les fonctions ps.delete() et ps.put()
+Pour faire un post, utiliser la fonction ps.put()\
+Pour faire un delete, utiliser la fonction ps.delete()\
+Pour faire un get, utiliser la fonction ps.get()\
+Pour faire un patch, utiliser les fonctions ps.delete() et ps.put()\

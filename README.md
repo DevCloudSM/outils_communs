@@ -93,3 +93,9 @@ Exemples de fonctions permettant d'illustrer un usage type de la librairie
     get('database_1',['table_1'],'column_1',82)
     delete('database_1','table_1',6)
 ```
+
+## 11. Application à l'API:
+Pour faire un post, utiliser la fonction ps.put()
+Pour faire un delete, utiliser la fonction ps.delete()
+Pour faire un get, utiliser la fonction ps.get()
+Pour faire un patch, utiliser les fonctions ps.delete() et ps.put()
